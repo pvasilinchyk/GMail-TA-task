@@ -21,7 +21,7 @@ public class ThemesSettingsPage {
 
 	@FindBy(linkText = "Set Theme.")
 	private WebElement setThemeLink;
-	
+
 	@FindBy(xpath = "//div/img[@src='//ssl.gstatic.com/ui/v1/icons/mail/themes/random/previewHD.png']")
 	private WebElement randomThemeThumbnail;
 
@@ -57,8 +57,7 @@ public class ThemesSettingsPage {
 	}
 
 	public boolean checkTheme() {
-		return this.driver.getPageSource()
-				.contains("//ssl.gstatic.com/ui/v1/icons/mail/themes/beach2/");
+		return this.driver.getPageSource().contains("//ssl.gstatic.com/ui/v1/icons/mail/themes/beach2/");
 	}
 
 	public void setImproperTheme(String pathToAttach) throws AWTException {
@@ -87,11 +86,11 @@ public class ThemesSettingsPage {
 			this.driver.navigate().refresh();
 			setImproperTheme(pathToAttach);
 		}
-
 	}
 
 	public boolean isMessagePresent() {
-		return this.driver.findElements(By.xpath("//div[contains(text(),' is not supported for upload.')]")).size() != 0;
+		return this.driver.findElements(By.xpath("//div[contains(text(),' is not supported for upload.')]"))
+				.size() != 0;
 	}
 
 	public void setRandomTheme() {
@@ -100,6 +99,5 @@ public class ThemesSettingsPage {
 		saveThemeButton.click();
 		WebDriverWait wait = new WebDriverWait(driver, 3);
 		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//div[@role='alertdialog']")));
-		
 	}
 }

@@ -152,7 +152,6 @@ public class Steps {
 	public boolean alertWindowAppears() {
 		ComposeEmailPage composeEmailPage = new ComposeEmailPage(driver);
 		try {
-			// driver.switchTo().alert().accept();
 			return composeEmailPage.isAlertPresent();
 		} catch (NoAlertPresentException ex) {
 			return false;
@@ -196,18 +195,17 @@ public class Steps {
 	public void deleteAllMessages(String userName, String password) {
 		SignInPage signInPage = new SignInPage(driver);
 		signInPage.openPage();
-		MailBoxPage mailBoxPage=signInPage.logIn(userName, password);
+		MailBoxPage mailBoxPage = signInPage.logIn(userName, password);
 		mailBoxPage.deleteMessages(searchInSpam);
 		mailBoxPage.deleteMessages(searchInInbox);
 		mailBoxPage.deleteMessages(searchInTrash);
-		
 
 	}
 
 	public void setDefaultTheme(String userName, String passwordUser) {
 		ThemesSettingsPage themeSettingsPage = new ThemesSettingsPage(driver);
 		themeSettingsPage.setRandomTheme();
-		
+
 	}
 
 	public String getLastEmailSubject() {
@@ -218,13 +216,13 @@ public class Steps {
 	public void unmarkSpamLetter(String lastEmailSubject) {
 		MailBoxPage mailBoxPage = new MailBoxPage(driver);
 		mailBoxPage.markAsNotSpam(lastEmailSubject);
-		
+
 	}
 
 	public void setSignature(String msgSubject) {
 		SettingsPage settingsPage = new SettingsPage(driver);
 		settingsPage.setSignature(msgSubject);
-		
+
 	}
 
 	public boolean checkSignature(String msgSubject) {

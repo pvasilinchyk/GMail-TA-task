@@ -46,7 +46,6 @@ public class TestUnits {
 		steps.restartBrowser();
 		steps.loginAsRegisteredUser(userName2, passwordUser2);
 		Assert.assertTrue(steps.isEmailInSpam(msgSubject));
-
 	}
 
 	@Test(enabled = false, description = "Forward Test")
@@ -98,7 +97,7 @@ public class TestUnits {
 		Assert.assertTrue(steps.isThemeChosen());
 	}
 
-	@Test(enabled = false, description = "Send mail with emoticons")
+	@Test(enabled = false, description = "NOT IMPLEMENTED YET! Send mail with emoticons")
 	public void emoticonsTest() {
 		steps.loginAsRegisteredUser(userName3, passwordUser3);
 		List<WebElement> emoticons = steps.sendMailWithEmoticon(userName3, msgSubject, msgText);
@@ -113,7 +112,6 @@ public class TestUnits {
 		steps.goToThemesTab();
 		steps.chooseImproperTheme(pathToAttach);
 		Assert.assertTrue(steps.errorMessageAppears());
-
 	}
 
 	@Test(enabled = false, description = "Mark as spam and not spam")
@@ -134,13 +132,13 @@ public class TestUnits {
 		steps.setSignature(msgSubject);
 		Assert.assertTrue(steps.checkSignature(msgSubject));
 	}
-	
-	@Test(enabled = false, description = "Check 'star' selection")
+
+	@Test(enabled = false, description = "NOT IMPLEMENTED YET!Check 'star' selection")
 	public void starredEmailTest() {
 		steps.loginAsRegisteredUser(userName1, passwordUser1);
 		String lastEmailSubject = steps.getLastEmailSubject();
-//		steps.markEmailWithStar(lastEmailSubject);
-//		steps.goToStarFolder();
+		// steps.markEmailWithStar(lastEmailSubject);
+		// steps.goToStarFolder();
 		Assert.assertTrue(steps.checkIfMailIsInInbox(lastEmailSubject));
 	}
 
@@ -148,18 +146,5 @@ public class TestUnits {
 	public void tearDown() {
 		steps.closeBrowser();
 	}
-
-	// @AfterClass
-	// public void cleanUp(){
-	// steps.startBrowser();
-	// steps.deleteAllMessages(userName1,passwordUser1);
-	// steps.restartBrowser();
-	// steps.deleteAllMessages(userName2,passwordUser2);
-	// steps.restartBrowser();
-	// steps.deleteAllMessages(userName3,passwordUser3);
-	// steps.restartBrowser();
-	// steps.setDefaultTheme(userName3,passwordUser3);
-	// steps.deleteFiltersAndForwarding(userName2,passwordUser2);
-	// }
 
 }

@@ -10,28 +10,27 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class SettingsPage {
 
 	private WebDriver driver;
-	
+
 	private String inboxUrl = "https://mail.google.com/mail/#inbox";
 
 	@FindBy(linkText = "Forwarding and POP/IMAP")
 	private WebElement forwardingSettingsTab;
-	
+
 	@FindBy(linkText = "Filters and Blocked Addresses")
 	private WebElement filtersTab;
-	
+
 	@FindBy(linkText = "Themes")
 	private WebElement themesTab;
-	
+
 	@FindBy(xpath = "//input[@name='sx_sg'][@value='1']")
 	private WebElement signatureRadioButton;
 
-	
 	@FindBy(xpath = "//div[@aria-label='Signature']")
 	private WebElement signatureInput;
-	
+
 	@FindBy(xpath = "//button[text()='Save Changes']")
 	private WebElement saveChangesButton;
-	
+
 	public SettingsPage(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(this.driver, this);
@@ -45,7 +44,6 @@ public class SettingsPage {
 	public FilterSettingsPage selectFiltersTab() {
 		filtersTab.click();
 		return new FilterSettingsPage(this.driver);
-		
 	}
 
 	public ThemesSettingsPage selectThemesTab() {
@@ -60,7 +58,6 @@ public class SettingsPage {
 		saveChangesButton.click();
 		WebDriverWait wait = new WebDriverWait(driver, 3);
 		wait.until(ExpectedConditions.urlToBe(inboxUrl));
-		
 	}
 
 }

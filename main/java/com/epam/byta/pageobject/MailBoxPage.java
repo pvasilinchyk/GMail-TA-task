@@ -23,7 +23,7 @@ public class MailBoxPage {
 
 	@FindBy(xpath = "//div[text()='Not spam'] [@role='button']")
 	private WebElement buttonNotSpam;
-	
+
 	@FindBy(xpath = "//div[text()='COMPOSE']")
 	private WebElement buttonCompose;
 
@@ -86,14 +86,12 @@ public class MailBoxPage {
 		menuSpam.click();
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.visibilityOf(linkDeleteAllSpam));
-
 	}
 
 	public void clickTrashLink() {
 		menuTrash.click();
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.visibilityOf(linkEmptyTrash));
-
 	}
 
 	public void clickSettingsButton() {
@@ -107,12 +105,10 @@ public class MailBoxPage {
 
 	public boolean findMailBySubject(String subject) {
 		return this.driver.findElements(By.xpath("//span/b[text()='" + subject + "']")).size() != 0;
-
 	}
 
 	public void openMailBySubject(String subject) {
 		this.driver.findElement(By.xpath("//span/b[contains(text(),'" + subject + "')]")).click();
-
 	}
 
 	public void clickConfirmationLink() {
@@ -123,7 +119,6 @@ public class MailBoxPage {
 		this.driver.findElement(By.xpath("//input[@value='Confirm']")).click();
 		this.driver.switchTo().defaultContent();
 		this.driver.close();
-
 	}
 
 	public void submitToSearch(String query) {
@@ -168,8 +163,6 @@ public class MailBoxPage {
 		this.driver.navigate().refresh();
 		checkboxLastEmail.click();
 		buttonNotSpam.click();
-		
 	}
-
 
 }

@@ -53,7 +53,7 @@ public class ForwardingSettingsPage {
 		radioButtonForwardACopy.click();
 		WebDriverWait wait = new WebDriverWait(driver, 2);
 		try {
-			
+
 			wait.until(ExpectedConditions.elementToBeClickable(saveChangesButton));
 			saveChangesButton.click();
 		} catch (TimeoutException ex) {

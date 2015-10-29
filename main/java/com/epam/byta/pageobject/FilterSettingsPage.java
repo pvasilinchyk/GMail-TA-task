@@ -43,7 +43,6 @@ public class FilterSettingsPage {
 
 	public void fillInFilterForm(String username) {
 		inputFrom.sendKeys(username);
-
 	}
 
 	public void checkHasAttach() {
@@ -53,9 +52,6 @@ public class FilterSettingsPage {
 	public void createFilterWithThisSearch() {
 		createFilterWithThisSearchLink.click();
 		this.driver.switchTo().activeElement();
-//		if (buttonOK.isDisplayed()) {
-//			buttonOK.click();
-//		}
 		checkBoxDeleteIt.click();
 		checkBoxAlwaysMarkItAsImportant.click();
 		buttonCreateFilter.click();

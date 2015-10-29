@@ -72,17 +72,11 @@ public class ComposeEmailPage {
 		Robot robot = new Robot();
 		robot.delay(500);
 		robot.keyPress(KeyEvent.VK_CONTROL);
-//		robot.delay(500);
 		robot.keyPress(KeyEvent.VK_V);
-//		robot.delay(500);
 		robot.keyRelease(KeyEvent.VK_V);
-//		robot.delay(500);
 		robot.keyRelease(KeyEvent.VK_CONTROL);
-//		robot.delay(500);
 		robot.keyPress(KeyEvent.VK_ENTER);
-//		robot.delay(500);
 		robot.keyRelease(KeyEvent.VK_ENTER);
-//		robot.delay(3000);
 //		if (this.driver.findElements(By.xpath("//div[@role='button'][@class='vq']")).size() == 0) {
 //			robot.keyPress(KeyEvent.VK_ENTER);
 //			robot.delay(500);
